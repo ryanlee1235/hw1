@@ -56,7 +56,7 @@ void rec_push_back(Node*& target, Node*& list)
   if(target == nullptr)
   {
     target = list;
-    std::cout << "added first element" << std::endl;
+
     target->next = nullptr;
   }
   else if(target->next == nullptr)
