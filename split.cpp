@@ -9,7 +9,6 @@ To test your program write a separate .cpp file and #include
 split.h.  **Do NOT add main() to this file**.  When you submit
 the function below should be the only one in this file.
 */
-#include <iostream>
 #include "split.h"
 
 
