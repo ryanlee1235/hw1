@@ -27,13 +27,16 @@ ULListStr * makeList(std::vector<std::string> const & values, bool pushBack)
 {
 	// circular list is not copyable so we have to pass it by pointer
 	ULListStr * list = new ULListStr();
-
+  //std::cout << "made it to makeList" << std::endl;
 	if(pushBack)
 	{
+    //std::cout << "Made it to front of for loop" << std::endl;
 		for(std::vector<std::string>::const_iterator valuesIter = values.cbegin(); valuesIter != values.cend(); ++valuesIter)
 		{
+      //std::cout << "pushed back" << std::endl;
 			list->push_back(*valuesIter);
 		}
+    //std::cout << "skipped the for loop" << std::endl;
 	}
 	else
 	{
@@ -614,7 +617,8 @@ TEST(UnrolledList, Back_PushBack)
 {
 	std::vector<std::string> content = {"sup", "er", "cal", "i", "frag", "il", "ist", "ic", "exp", "i", "alo", "doc", "ious"};
 
-	ULListStr * list = makeList(content, false);
+	ULListStr * list = makeList(content, true);
+  //std::cout << "Created the list" << std::endl;
 
 	EXPECT_EQ(list->back(), "ious");
 
